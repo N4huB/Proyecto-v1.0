@@ -14,6 +14,11 @@
             const myButton = document.getElementById("myButton");
             const video = document.getElementById('video');
             myButton.addEventListener("click", function() {
+                const constraints = {
+                    video: {
+                        facingMode: { ideal: "environment" } 
+                    }
+                };
                 navigator.mediaDevices.getUserMedia({ video: true })
                     .then(function(stream) {
                         video.srcObject = stream;
