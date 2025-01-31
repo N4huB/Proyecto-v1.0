@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <video id="video" autoplay playsinline></video>
+        <button id="myButton">consulta</button>
+        <script>
+            const myButton = document.getElementById("myButton");
+            const video = document.getElementById('video');
+            myButton.addEventListener("click", function() {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function(stream) {
+                        video.srcObject = stream;
+                        video.play();
+                        video.addEventListener('loadedmetadata', () => {
+                            video.requestFullscreen();
+                        });
+                    })
+                    .catch(function(error) {
+                        console.error("Error al acceder a la cámara:", error);
+                    });
+            });
+        </script>
+    </div>
+</body>
+</html>

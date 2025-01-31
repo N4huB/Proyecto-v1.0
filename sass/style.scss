@@ -1,0 +1,18 @@
+.container {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 20px;
+    position: relative; /* Necesario para el posicionamiento absoluto del botón */
+    #myButton {
+        position: absolute;
+        top: 50%; /* Coloca el botón a la mitad del contenedor verticalmente */
+        left: 50%; /* Coloca el botón a la mitad del contenedor horizontalmente */
+        transform: translate(-50%, -50%); /* Ajusta el posicionamiento para centrarlo correctamente */
+        font-size: 20px;
+    }
+    #video{
+        
+    }
+}
+
